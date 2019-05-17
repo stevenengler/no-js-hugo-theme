@@ -1,0 +1,379 @@
+h1 { font-size: 1.4em; }
+h2 { font-size: 1.22em; }
+h3 { font-size: 1.15em; }
+h4 { font-size: 1.05em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 1.5em;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.dont-show {
+	display: none;
+}
+
+/* Improvements to Hugo Chroma syntax highlighting */
+
+.highlight > * {
+	padding: 0.5em;
+	border: 2px solid #E0E0E0;
+}
+
+.highlight pre {
+	margin: 0px;
+	overflow-x: auto;
+}
+
+.highlight table td:last-child {
+	/* needed until this bug is fixed: https://github.com/alecthomas/chroma/issues/225 */
+	width: 100%;
+}
+
+code {
+	font-size: 98%;
+}
+
+:not(pre) > code {
+	/* inline code elements */
+	background-color: rgba(25, 25, 25, 0.05);
+	border-radius: 5px;
+	font-size: 80%;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+}
+
+/* ************************ */
+
+blockquote {
+	color: #404040;
+	border-left: 0.25em solid #CCC;
+	padding-left: 0.5em;
+	margin-left: 1.5em;
+}
+
+.title-header {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.title-header > h1{
+	margin-top: 0;
+	margin-bottom: 0.3em;
+}
+
+.title-header-date {
+	color: rgb(90, 90, 90);
+	font-size: 80%;
+}
+
+.title-list > h2, .title-list > h3, .title-list > h4, .title-list > h5, .title-list > h6{
+	margin-bottom: 0.1em;
+}
+
+.body-list p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.title-list-date {
+	color: rgb(90, 90, 90);
+	font-size: 80%;
+}
+
+.links {
+	font-size: 120%;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-top: 9pt;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	overflow: hidden;
+	transition: all 0.2s;
+	-webkit-overflow-scrolling: touch; /* this needs to go here for some reason */
+}
+
+.links li {
+	margin-right: 1em;
+}
+
+.links li > * {
+	display:inline-block;
+}
+
+.links li:last-child {
+	margin-right: 0;
+}
+
+.links a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.links a:hover {
+	color: #505050;
+}
+
+.overlay {
+	position: fixed;
+	visibility: hidden;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 2;
+}
+
+.header-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+}
+
+.header-right * {
+	margin-left: 0.8em;
+}
+
+.header-right *:first-child {
+	margin-left: 0;
+}
+
+.clickable-header-label {
+	cursor: pointer;
+}
+
+.clickable-header-label * {
+	height: 1em;
+}
+
+#show-hide-menu-label {
+	display: none;
+}
+
+body {
+	font-size: 13pt;
+	font-family: Lato, Arial, Helvetica, sans-serif;
+	line-height: 1.4em;
+	margin: 0;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 140%;
+	line-height: 1em;
+}
+
+.title a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.header {
+	background-color: lightgray;
+	background-size: 100%;
+	background-position: bottom;
+	display: inline-block;
+	width: 100%;
+}
+
+.header-content {
+	margin: 15pt;
+	position: relative; /* so that "position:absolute" works for the menu label */
+}
+
+.body {
+	display: inline-block;
+	width: 100%;
+}
+
+.body-content {
+	margin: 15pt;
+}
+
+/* Image/Figure formatting */
+
+.body-content :not(figure) img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 70%;
+	max-height: 40vw; /* if the image is really tall, we don't want the width to be 70% */
+}
+
+.body-content figure {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 70%;
+}
+
+.body-content figure img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0.5em;
+	max-width: 100%;
+	max-height: 40vw; /* if the image is really tall, we don't want the width to be 70% */
+}
+
+.body-content figure figcaption {
+	font-size: 90%;
+	line-height: 1.5em;
+	padding-bottom: 0.3em;
+	border-bottom: 2px solid lightgray;
+}
+
+.body-content figure figcaption * {
+	margin: 0;
+}
+
+@media only screen and (orientation: portrait) {
+	.body-content :not(figure) img {
+		max-height: 100vw;
+	}
+
+	.body-content figure img {
+		max-height: 100vw;
+	}
+}
+
+@media only screen and (max-width: 400pt) {
+	.body-content :not(figure) img {
+		max-width: 100%;
+	}
+
+	.body-content figure {
+		max-width: 100%;
+	}
+
+	.body-content figure figcaption {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+}
+
+/* ************************ */
+
+.main {
+	width: 700pt; /* make sure to also change this in the media query */
+	margin: 0 auto;
+	margin-top: 10pt;
+	margin-bottom: 10pt;
+	box-sizing: border-box;
+	box-shadow: 0 0 10px rgba(50, 50, 50, .17);
+}
+
+.footer {
+	text-align: center;
+	padding-bottom: 10pt;
+	font-size: 80%;
+}
+
+
+@media only screen and (orientation: portrait) {
+	.header {
+		top: 0;
+		position: sticky;
+		position: -webkit-sticky; /* needed for iOS */
+	}
+}
+
+
+@media only screen and (max-width: 700pt) {
+    .main {
+        width: 100%;
+		margin-top: 0;
+    }
+
+	body {
+		font-size: 12pt;
+		background-color: white;
+	}
+}
+
+@media only screen and (max-width: 400pt) {
+	.clickable-header-label * {
+		vertical-align: middle;
+	}
+
+	#show-hide-menu-label {
+		display: inline-block;
+	}
+
+	.show-hide-menu-input:checked ~ .main .links {
+		visibility: visible;
+		opacity: 1;
+		right: 0;
+		transition: all 0.3s;
+	}
+
+	.show-hide-menu-input:checked ~ .main .overlay {
+		visibility: visible;
+		opacity: 1;
+		transition: opacity 0.3s;
+	}
+
+	.links {
+		display: block;
+		visibility: hidden;
+		opacity: 0;
+		overflow-y: scroll;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: -100px; /* start to the right for the transition */
+		min-width: 75%;
+		z-index: 3;
+		background-color: rgb(247, 247, 247);
+		padding: 10pt;
+		margin: 0;
+	}
+
+	.links li {
+		margin-right: 0;
+		border-bottom: solid 1px gray;
+	}
+
+	.links li > * {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 13px;
+	}
+
+	.links li:first-child {
+		border-top: solid 1px gray;
+		margin-top: 0px;
+	}
+
+	.header-content {
+		margin: 10pt;
+	}
+
+	.body-content {
+		margin: 10pt;
+	}
+
+	.title {
+		font-size: 120%
+	}
+}

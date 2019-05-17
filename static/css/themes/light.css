@@ -1,0 +1,33 @@
+a {
+	color: #0000A0;
+}
+
+:not(pre) > code {
+	/* inline code elements */
+	background-color: rgba(25, 25, 25, 0.05);
+}
+
+a > code {
+	background-color: rgba(15, 15, 150, 0.05);
+}
+
+body {
+	background-color: rgb(247, 247, 247);
+}
+
+blockquote {
+	color: #404040;
+	border-left: 0.25em solid #CCC;
+}
+
+.header {
+	background-image: url(../../images/header-bg-light.jpg);
+}
+
+.main {
+	background-color: white;
+}
+
+.footer {
+	color: #383838;
+}

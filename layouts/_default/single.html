@@ -1,0 +1,18 @@
+{{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+  <div class="title-header">
+    <h1>{{ .Title }}</h1>
+    <div class="title-header-date">
+      {{ if eq .Date.IsZero false }}
+        <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
+      {{ end }}
+      {{ if (and (eq .Lastmod.IsZero false) (ne .Lastmod .Date)) }}
+        &mdash; last updated <time>{{ .Lastmod.Format "January 2, 2006" }}</time>
+      {{ end }}
+    </div>
+  </div>
+  {{ .Content }}
+{{ end }}
+
+
+

@@ -1,0 +1,31 @@
+{{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+  {{ .Content }}
+  <div class="title-header">
+    <h1>Posts</h1>
+  </div>
+  {{ range .Pages }}
+    <article class="all-list">
+      <div class="title-list">
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <div class="title-list-date">
+          {{ if eq .Date.IsZero false }}
+            <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
+          {{ end }}
+          {{ if (and (eq .Lastmod.IsZero false) (ne .Lastmod .Date)) }}
+            (updated)
+          {{ end }}
+        </div>
+      </div>
+      <div class="body-list">
+        <p></p> {{/* Spacing is weird if we don't include this */}}
+        <p>
+          {{ .Summary }}
+        </p>
+        {{ if .Truncated }}
+          <a href="{{ .RelPermalink }}">Read More…</a>
+        {{ end }}
+      </div>
+    </article>
+  {{ end }}
+{{ end }}
