@@ -4,28 +4,42 @@
   <div class="title-header">
     <h1>{{ .Title }}</h1>
   </div>
-  {{ range .Pages }}
-    <article class="all-list">
-      <div class="title-list">
-        <h2><a href="{{ .RelPermalink }}">{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</a></h2>
-        <div class="title-list-date">
-          {{ if eq .Date.IsZero false }}
-            <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
-          {{ end }}
-          {{ if (and (eq .Lastmod.IsZero false) (ne .Lastmod .Date)) }}
-            (updated)
-          {{ end }}
-        </div>
-      </div>
-      <div class="body-list">
-        <p></p> {{/* Spacing is weird if we don't include this */}}
-        <p>
-          {{ .Summary }}
-        </p>
-        {{ if .Truncated }}
-          <a href="{{ .RelPermalink }}">Read More…</a>
+  {{ if gt (len .Sections) 0 }}
+  <h2>Categories</h2>
+    <ul>
+    {{ range .Sections }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+    </ul>
+  <h2>All Posts</h2>
+  {{ end }}
+  {{ $cs := .CurrentSection }}
+  {{ with $cs }}
+    {{ range (where .Site.RegularPages "Section" .Section) }}
+      {{ if .IsDescendant $cs }}
+  <article class="all-list">
+    <div class="title-list">
+      <h3><a href="{{ .RelPermalink }}">{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</a></h3>
+      <div class="title-list-date">
+        {{ if eq .Date.IsZero false }}
+          <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
+        {{ end }}
+        {{ if (and (eq .Lastmod.IsZero false) (ne .Lastmod .Date)) }}
+          (updated)
         {{ end }}
       </div>
-    </article>
+    </div>
+    <div class="body-list">
+      <p></p> {{/* Spacing is weird if we don't include this */}}
+      <p>
+        {{ .Summary }}
+      </p>
+      {{ if .Truncated }}
+        <a href="{{ .RelPermalink }}">Read More…</a>
+      {{ end }}
+    </div>
+  </article>
+      {{ end }}
+    {{ end }}
   {{ end }}
 {{ end }}
