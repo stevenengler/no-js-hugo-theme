@@ -2,7 +2,7 @@
 {{ define "main" }}
   {{ .Content }}
   <div class="title-header">
-    <h1>Posts</h1>
+    <h1>{{ .Title }}</h1>
   </div>
   {{ range .Pages }}
     <article class="all-list">
