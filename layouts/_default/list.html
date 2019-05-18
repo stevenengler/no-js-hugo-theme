@@ -7,7 +7,7 @@
   {{ range .Pages }}
     <article class="all-list">
       <div class="title-list">
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <h2><a href="{{ .RelPermalink }}">{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</a></h2>
         <div class="title-list-date">
           {{ if eq .Date.IsZero false }}
             <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>

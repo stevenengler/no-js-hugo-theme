@@ -5,7 +5,7 @@
     {{ range first 2 ( where .Pages "Section" "posts" ) }}
       <article class="all-list">
         <div class="title-list">
-          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <h3><a href="{{ .RelPermalink }}">{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</a></h3>
           <div class="title-list-date">
             {{ if eq .Date.IsZero false }}
               <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>

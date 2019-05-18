@@ -1,7 +1,7 @@
 {{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
 {{ define "main" }}
   <div class="title-header">
-    <h1>{{ .Title }}</h1>
+    <h1>{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</h1>
     <div class="title-header-date">
       {{ if eq .Date.IsZero false }}
         <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
@@ -13,6 +13,3 @@
   </div>
   {{ .Content }}
 {{ end }}
-
-
-
