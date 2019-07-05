@@ -105,7 +105,6 @@ blockquote {
 	flex-direction: row;
 	flex-wrap: wrap;
 	overflow: hidden;
-	transition: all 0.2s;
 	-webkit-overflow-scrolling: touch; /* this needs to go here for some reason */
 }
 
