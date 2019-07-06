@@ -27,9 +27,16 @@ a:hover {
 
 /* Improvements to Hugo Chroma syntax highlighting */
 
+.highlight {
+	/* set the tab size for browsers that support it */
+	tab-size: 4;
+	-moz-tab-size: 4;
+}
+
 .highlight > * {
 	padding: 0.5em;
-	border: 2px solid #E0E0E0;
+	border-width: 2px;
+	border-style: solid;
 }
 
 .highlight pre {
@@ -37,10 +44,12 @@ a:hover {
 	overflow-x: auto;
 }
 
-.highlight table td:last-child {
+.highlight .lntable td:last-child {
 	/* needed until this bug is fixed: https://github.com/alecthomas/chroma/issues/225 */
 	width: 100%;
 }
+
+/* Improvements to inline code blocks */
 
 code {
 	font-size: 98%;

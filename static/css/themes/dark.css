@@ -1,5 +1,11 @@
+@import url("dark-chroma.css");
+
 a {
 	color: #A1A1EA;
+}
+
+.highlight > * {
+	border-color: #505050;
 }
 
 :not(pre) > code {
