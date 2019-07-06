@@ -31,6 +31,8 @@ a:hover {
 	/* set the tab size for browsers that support it */
 	tab-size: 4;
 	-moz-tab-size: 4;
+	/* needed for the iPhone so that the two columns (line numbers and code) don't have different font sizes */
+	-webkit-text-size-adjust: 100%;
 }
 
 .highlight > * {
@@ -45,7 +47,12 @@ a:hover {
 	word-wrap: normal;
 }
 
-.highlight .lntable td:last-child {
+.highlight td.lntd pre {
+	/* needed to fix an iPhone scrolling bug */
+	overflow-x: hidden;
+}
+
+.highlight td.lntd:last-child {
 	/* needed until this bug is fixed: https://github.com/alecthomas/chroma/issues/225 */
 	width: 100%;
 }
