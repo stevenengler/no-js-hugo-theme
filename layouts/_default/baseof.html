@@ -1,4 +1,4 @@
-{{ $themeStyleDefault := "light.css" }}
+{{ $themeStyleDefault := "light.css" -}}
 
 <!DOCTYPE html>
 <html>
@@ -10,9 +10,9 @@
 	<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 	<link rel="stylesheet" href="css/styles.css">
 	<link id="theme_css" rel="stylesheet" href="css/themes/{{ .Site.Params.ThemeStyle | default $themeStyleDefault }}">
-{{ if .Site.Params.ThemeStyleSwitcher }}
+{{- if .Site.Params.ThemeStyleSwitcher }}
 	<script src="js/theme-switcher.js"></script>
-{{ end }}
+{{- end }}
 </head>
 <body>
 	<input class="show-hide-menu-input" style="display:none;" autocomplete="off" type="checkbox" id="toggle-1">
@@ -24,40 +24,40 @@
 				</div>
 				<div>
 					<div class="header-right">
-{{ if .Site.Params.ThemeStyleSwitcher }}
+{{- if .Site.Params.ThemeStyleSwitcher }}
 						<div id="change-theme-button" style="display:none;" class="clickable-header-label">
 							<img class="color-adapting-image" width="30" src="" onclick="toggle_theme()">
 						</div>
-{{ end }}
+{{- end }}
 					    <label id="show-hide-menu-label" class="clickable-header-label" for="toggle-1">
 							<img class="color-adapting-image" width="30" src="images/hamburger.svg" alt="menu button">
 						</label>
 					</div>
 					<label class="overlay" for="toggle-1"></label>
-{{ if .Site.Menus.main }}
+{{- if .Site.Menus.main }}
 					<div class="dont-show">
 						Links:
 					</div>
 					<ul class="links">
-{{ range .Site.Menus.main.ByWeight }}
+{{- range .Site.Menus.main.ByWeight }}
 						<li><a href="{{ .URL }}">{{ .Name }}</a></li>
-{{ end }}
+{{- end }}
 					</ul>
-{{ end }}
+{{- end }}
 				</div>
 			</div>
 		</div>
 		<div class="body">
 			<div class="body-content">
-				{{ block "main" . }}{{ end }}
+				{{- block "main" . }}{{ end }}
 			</div>
 		</div>
 	</div>
-{{ if .Site.Params.FooterText }}
+{{- if .Site.Params.FooterText }}
 	<hr class="dont-show">
 	<div class="footer">
 		<p>{{ .Site.Params.FooterText }}</p>
 	</div>
-{{ end }}
+{{- end }}
 </body>
 </html>

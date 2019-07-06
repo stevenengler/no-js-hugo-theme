@@ -4,29 +4,29 @@
   <div class="title-header">
     <h1>{{ .Title }}</h1>
   </div>
-  {{ if gt (len .Sections) 0 }}
+  {{- if gt (len .Sections) 0 }}
   <h2>Categories</h2>
     <ul>
-    {{ range .Sections }}
+    {{- range .Sections }}
       <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
+    {{- end }}
     </ul>
   <h2>All Posts</h2>
-  {{ end }}
-  {{ $cs := .CurrentSection }}
-  {{ with $cs }}
-    {{ range (where .Site.RegularPages "Section" .Section) }}
-      {{ if .IsDescendant $cs }}
+  {{- end }}
+  {{- $cs := .CurrentSection }}
+  {{- with $cs }}
+    {{- range (where .Site.RegularPages "Section" .Section) }}
+      {{- if .IsDescendant $cs }}
   <article class="all-list">
     <div class="title-list">
       <h3><a href="{{ .RelPermalink }}">{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</a></h3>
       <div class="title-list-date">
-        {{ if eq .Date.IsZero false }}
+        {{- if eq .Date.IsZero false }}
           <time>{{ .Date.Format "Monday, January 2, 2006" }}</time>
-        {{ end }}
-        {{ if (and (eq .Lastmod.IsZero false) (ne .Lastmod .Date)) }}
+        {{- end }}
+        {{- if (and (eq .Lastmod.IsZero false) (ne .Lastmod .Date)) }}
           (updated)
-        {{ end }}
+        {{- end }}
       </div>
     </div>
     <div class="body-list">
@@ -34,12 +34,12 @@
       <p>
         {{ .Summary }}
       </p>
-      {{ if .Truncated }}
+      {{- if .Truncated }}
         <a href="{{ .RelPermalink }}">Read More…</a>
-      {{ end }}
+      {{- end }}
     </div>
   </article>
-      {{ end }}
-    {{ end }}
-  {{ end }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
 {{ end }}
