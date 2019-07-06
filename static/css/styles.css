@@ -42,6 +42,7 @@ a:hover {
 .highlight pre {
 	margin: 0px;
 	overflow-x: auto;
+	word-wrap: normal;
 }
 
 .highlight .lntable td:last-child {
@@ -217,6 +218,7 @@ body {
 
 .body-content {
 	margin: 15pt;
+	word-wrap: break-word;
 }
 
 /* Image/Figure formatting */
