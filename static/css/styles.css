@@ -168,7 +168,7 @@ blockquote {
 }
 
 .header-right * {
-	margin-left: 0.8em;
+	margin-left: 1em;
 }
 
 .header-right *:first-child {
@@ -181,6 +181,7 @@ blockquote {
 
 .clickable-header-label * {
 	height: 1em;
+	width: auto; /* to override the <img width="__"> attribute when css is supported */
 }
 
 #show-hide-menu-label {
@@ -329,12 +330,21 @@ body {
 }
 
 @media only screen and (max-width: 400pt) {
+	.header-right {
+		height: 100%;
+		align-items: center;
+	}
+
+	.clickable-header-label {
+		display: inline-flex;
+	}
+
 	.clickable-header-label * {
 		vertical-align: middle;
 	}
 
 	#show-hide-menu-label {
-		display: inline-block;
+		display: inherit;
 	}
 
 	.show-hide-menu-input:checked ~ .main .links {
@@ -391,6 +401,6 @@ body {
 	}
 
 	.title {
-		font-size: 120%
+		font-size: 130%
 	}
 }
