@@ -53,10 +53,11 @@
 			</div>
 		</div>
 	</div>
-	<div class="footer">
 {{ if .Site.Params.FooterText }}
-		{{ .Site.Params.FooterText }}
-{{ end }}
+	<hr class="dont-show">
+	<div class="footer">
+		<p>{{ .Site.Params.FooterText }}</p>
 	</div>
+{{ end }}
 </body>
 </html>
