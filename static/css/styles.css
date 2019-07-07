@@ -312,6 +312,7 @@ body {
 		top: 0;
 		position: sticky;
 		position: -webkit-sticky; /* needed for iOS */
+		box-shadow: 0 0 1em rgba(30, 30, 30, .3);
 	}
 }
 
