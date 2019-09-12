@@ -405,3 +405,37 @@ body {
 		font-size: 130%
 	}
 }
+
+@media print {
+	body {
+		background-color: initial !important;
+	}
+
+	.main {
+		margin-top: 0;
+		margin-bottom: 0;
+		width: 100%;
+		box-shadow: none !important;
+	}
+
+	.header {
+		background-color: initial !important;
+		background-image: none !important;
+	}
+
+	.header-content {
+		margin: 0;
+	}
+
+	.body-content {
+		margin: 0;
+	}
+
+	.header-right {
+		display: none;
+	}
+
+	.links {
+		display: none;
+	}
+}
