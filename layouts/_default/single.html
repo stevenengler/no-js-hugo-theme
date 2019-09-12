@@ -11,5 +11,21 @@
       {{- end }}
     </div>
   </div>
+  {{ if or (.Params.tableofcontents) (and (ne .Params.tableofcontents false) (isset .Site.Params "tableofcontentswordcount") (ge .Site.Params.TableOfContentsWordCount 0) (gt .WordCount .Site.Params.TableOfContentsWordCount)) }}
+    {{/* If the front matter parameter is true, show the toc */}}
+    {{/* Elif the front matter parameter is false, don't show the toc */}}
+    {{/* Elif the front matter parameter is not set, show the toc if the site parameter is set, non-negative, and less than the word count */}}
+    <div class="table-of-contents">
+      <details open="open">
+        <summary>
+          <span class="table-of-contents-title">Table of Contents</span>
+        </summary>
+        {{ $toc := .TableOfContents -}}
+        {{- $toc := replaceRE `<ul>\s?<li>\s?<ul>` `<ul>` $toc -}}
+        {{- $toc := replaceRE `</ul>\s?</li>\s?</ul>` `</ul>` $toc -}}
+        {{- safeHTML $toc }}
+      </details>
+    </div>
+  {{ end }}
   {{ .Content }}
 {{ end }}

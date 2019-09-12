@@ -53,6 +53,11 @@ blockquote {
 	color: rgb(150, 150, 150);
 }
 
+.table-of-contents {
+	border-color: #505050;
+	background-color: #1A1A1A;
+}
+
 @media only screen and (max-width: 400pt) {
 	.links {
 		background-color: rgb(30, 30, 30);

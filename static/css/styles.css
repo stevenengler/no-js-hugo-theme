@@ -112,6 +112,38 @@ blockquote {
 	font-size: 80%;
 }
 
+.table-of-contents {
+	border-width: 2px;
+	border-style: solid;
+	padding: 1em;
+	margin-bottom: 2em;
+	font-size: 0.9em;
+}
+
+.table-of-contents nav > ul {
+	/* only the most-parent ul element */
+	margin-bottom: 0;
+}
+
+.table-of-contents ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.table-of-contents li {
+	margin-top: 0.8em;
+}
+
+.table-of-contents ul ul {
+	list-style: none;
+	padding-left: 1.5em;
+}
+
+.table-of-contents-title {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
 .links {
 	font-size: 120%;
 	list-style-type: none;

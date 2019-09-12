@@ -37,3 +37,8 @@ blockquote {
 .footer {
 	color: #383838;
 }
+
+.table-of-contents {
+	border-color: #E0E0E0;
+	background-color: #FAFAFA;
+}
