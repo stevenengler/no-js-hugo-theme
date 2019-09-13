@@ -1,0 +1,13 @@
+{{- .Scratch.Set "type" "note" -}}
+{{- with .Get 0 }}{{ $.Scratch.Set "type" . }}{{ end -}}
+<aside class="notice {{ .Scratch.Get "type" }}">
+	<hr>
+	<div class="notice-title">
+		<img class="notice-title-icon" src="{{ "images/exclamation.svg" | relURL }}" height="15">
+		<span>{{ with .Get 1 }}{{ . }}{{ else }}{{ .Scratch.Get "type" | humanize }}{{ end }}</span>
+	</div>
+	<div class="notice-body">
+{{ .Inner | markdownify }}
+	</div>
+	<hr>
+</aside>

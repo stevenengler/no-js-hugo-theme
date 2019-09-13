@@ -58,6 +58,43 @@ blockquote {
 	background-color: #1A1A1A;
 }
 
+.notice {
+	border-width: 2px;
+	border-style: solid;
+	border-top: 0;
+}
+
+.notice .notice-title .notice-title-icon {
+	filter: invert(80%);
+}
+
+.notice.note {
+	background-color: #001320;
+	border-color: #00487B;
+}
+
+.notice.note .notice-title {
+	background-color: #00487B;
+}
+
+.notice.tip {
+	background-color: #132000;
+	border-color: #105600;
+}
+
+.notice.tip .notice-title {
+	background-color: #105600;
+}
+
+.notice.warning {
+	background-color: #200000;
+	border-color: #700000;
+}
+
+.notice.warning .notice-title {
+	background-color: #700000;
+}
+
 @media only screen and (max-width: 400pt) {
 	.links {
 		background-color: rgb(30, 30, 30);

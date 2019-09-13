@@ -42,3 +42,39 @@ blockquote {
 	border-color: #E0E0E0;
 	background-color: #FAFAFA;
 }
+
+.notice {
+	color: #404040;
+}
+
+.notice .notice-title {
+	color: white;
+}
+
+.notice .notice-title .notice-title-icon {
+	filter: invert(1);
+}
+
+.notice.note {
+	background-color: #E7F2FA;
+}
+
+.notice.note .notice-title {
+	background-color: #6AB0DE;
+}
+
+.notice.tip {
+	background-color: #e6f9e6;
+}
+
+.notice.tip .notice-title {
+	background-color: #77c577;
+}
+
+.notice.warning {
+	background-color: #fae2e2;
+}
+
+.notice.warning .notice-title {
+	background-color: #df6f6c;
+}
