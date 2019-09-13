@@ -21,8 +21,8 @@
           <span class="table-of-contents-title">Table of Contents</span>
         </summary>
         {{ $toc := .TableOfContents -}}
-        {{- $toc := replaceRE `<ul>\s?<li>\s?<ul>` `<ul>` $toc -}}
-        {{- $toc := replaceRE `</ul>\s?</li>\s?</ul>` `</ul>` $toc -}}
+        {{- $toc := replaceRE `<nav(.*)>(\s?)<ul>\s?<li>\s?<ul>` `<nav${1}>${2}<ul>` $toc -}}
+        {{- $toc := replaceRE `</ul>\s?</li>\s?</ul>(\s?)</nav>` `</ul>${1}</nav>` $toc -}}
         {{- safeHTML $toc }}
       </details>
     </div>
