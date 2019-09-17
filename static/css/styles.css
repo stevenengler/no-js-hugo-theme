@@ -13,6 +13,43 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 1.5em;
 }
 
+@media (hover: hover) {
+	/* For devices which support hover, hide the heading URL fragment
+	   link/icon until the mouse hovers over the heading */
+
+	h1:hover .heading-anchor,
+	h2:hover .heading-anchor,
+	h3:hover .heading-anchor,
+	h4:hover .heading-anchor,
+	h5:hover .heading-anchor,
+	h6:hover .heading-anchor {
+		visibility: visible;
+	}
+
+	h1 .heading-anchor,
+	h2 .heading-anchor,
+	h3 .heading-anchor,
+	h4 .heading-anchor,
+	h5 .heading-anchor,
+	h6 .heading-anchor {
+		visibility: hidden;
+	}
+}
+
+.heading-anchor {
+	color: grey;
+	margin-left: 0.5em;
+	font-size: 0.75em;
+}
+
+.heading-anchor:hover {
+	text-decoration: none;
+}
+
+.heading-anchor img {
+	height: 1em;
+}
+
 a {
 	text-decoration: none;
 }

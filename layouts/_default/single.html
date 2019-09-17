@@ -27,5 +27,5 @@
       </details>
     </div>
   {{ end }}
-  {{ .Content }}
+  {{ .Content | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" (printf "${1}<a href=\"#${2}\" class=\"heading-anchor\" aria-label=\"Anchor\"><img src=\"%s\" class=\"color-adapting-image\" height=\"20\"></a>${3}" ("images/chain-link.svg" | relURL)) | safeHTML }}
 {{ end }}
