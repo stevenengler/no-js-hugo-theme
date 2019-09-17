@@ -1,9 +1,9 @@
-h1 { font-size: 1.4em; }
-h2 { font-size: 1.22em; }
-h3 { font-size: 1.15em; }
-h4 { font-size: 1.05em; }
-h5 { font-size: .83em; }
-h6 { font-size: .75em; }
+h1 { font-size: 1.50em; }
+h2 { font-size: 1.40em; }
+h3 { font-size: 1.20em; }
+h4 { font-size: 1.00em; }
+h5 { font-size: 0.85em; }
+h6 { font-size: 0.75em; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	text-decoration: none;
