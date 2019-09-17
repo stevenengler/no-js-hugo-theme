@@ -5,13 +5,12 @@
 <head>
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width">
-	<base href="{{ .Site.BaseURL }}"/>
 	{{ .Hugo.Generator }}{{/* See: https://gohugo.io/themes/creating/#theme-description-file */}}
 	<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-	<link rel="stylesheet" href="css/styles.css">
-	<link id="theme_css" rel="stylesheet" href="css/themes/{{ .Site.Params.ThemeStyle | default $themeStyleDefault }}">
+	<link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
+	<link id="theme_css" rel="stylesheet" href="{{ "css/themes" | relURL }}/{{ .Site.Params.ThemeStyle | default $themeStyleDefault }}">
 {{- if .Site.Params.ThemeStyleSwitcher }}
-	<script src="js/theme-switcher.js"></script>
+	<script src="{{ "js/theme-switcher.js" | relURL }}"></script>
 {{- end }}
 </head>
 <body>
@@ -30,7 +29,7 @@
 						</div>
 {{- end }}
 					    <label id="show-hide-menu-label" class="clickable-header-label" for="toggle-1">
-							<img class="color-adapting-image" width="30" src="images/hamburger.svg" alt="menu button">
+							<img class="color-adapting-image" width="30" src="{{ "images/hamburger.svg" | relURL }}" alt="menu button">
 						</label>
 					</div>
 					<label class="overlay" for="toggle-1"></label>
