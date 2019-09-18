@@ -19,7 +19,7 @@ a > code {
 
 body {
 	color: rgb(210, 210, 210);
-	background-color: rgb(25, 25, 25);
+	background-color: rgb(27, 27, 27);
 }
 
 blockquote {
@@ -39,7 +39,7 @@ figure.color-adapting-image img {
 }
 
 .main {
-	background-color: rgb(12, 12, 12);
+	background-color: rgb(14, 14, 14);
 	box-shadow: none;
 }
 
