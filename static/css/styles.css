@@ -65,6 +65,8 @@ a:hover {
 /* Improvements to Hugo Chroma syntax highlighting */
 
 .highlight {
+	margin-top: 1em;
+	margin-bottom: 1em;
 	/* set the tab size for browsers that support it */
 	tab-size: 4;
 	-moz-tab-size: 4;
@@ -235,6 +237,7 @@ blockquote {
 .links {
 	font-size: 120%;
 	list-style-type: none;
+	line-height: 1;
 	padding: 0;
 	margin: 0;
 	margin-top: 9pt;
@@ -311,7 +314,7 @@ blockquote {
 body {
 	font-size: 13pt;
 	font-family: Lato, Arial, Helvetica, sans-serif;
-	line-height: 1.4em;
+	line-height: 1.4;
 	margin: 0;
 }
 
@@ -531,15 +534,15 @@ body {
 	}
 
 	.header-content {
-		margin: 10pt;
+		margin: 8pt 10pt;
 	}
 
 	.body-content {
 		margin: 10pt;
 	}
 
-	.title {
-		font-size: 130%
+	.title a {
+		vertical-align: -10%; /* we don't want the font descender space to be centered as well */
 	}
 }
 
