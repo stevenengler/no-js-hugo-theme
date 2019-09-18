@@ -331,6 +331,7 @@ body {
 	background-size: 100%;
 	background-position: bottom;
 	display: inline-block;
+	z-index: 1; /* this prevents images with css filters from appearing above the header when in portrait mode */
 	width: 100%;
 }
 
@@ -352,11 +353,9 @@ body {
 /* Image/Figure formatting */
 
 .body-content :not(figure) img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 70%;
-	max-height: 40vw; /* if the image is really tall, we don't want the width to be 70% */
+	/* regular image elements should be inline elements */
+	max-width: 100%;
+	max-height: 60vw; /* if the image is really tall, we don't want the width to be 100% */
 }
 
 .body-content figure {
@@ -374,6 +373,11 @@ body {
 	max-height: 40vw; /* if the image is really tall, we don't want the width to be 70% */
 }
 
+.body-content figure:not(.color-adapting-image) img {
+	/* if the image is designed to adapt to the theme, then don't use a background */
+	background-color: rgb(255, 255, 255); /* images with transparent backgrounds typically assume a light background */
+}
+
 .body-content figure figcaption {
 	font-size: 90%;
 	line-height: 1.5em;
@@ -386,20 +390,14 @@ body {
 }
 
 @media only screen and (orientation: portrait) {
-	.body-content :not(figure) img {
-		max-height: 100vw;
-	}
-
+	.body-content :not(figure) img,
 	.body-content figure img {
+		/* need to target both so that they're more specific */
 		max-height: 100vw;
 	}
 }
 
 @media only screen and (max-width: 400pt) {
-	.body-content :not(figure) img {
-		max-width: 100%;
-	}
-
 	.body-content figure {
 		max-width: 100%;
 	}
