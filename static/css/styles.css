@@ -432,6 +432,25 @@ body {
 		position: -webkit-sticky; /* needed for iOS */
 		box-shadow: 0 0 1em rgba(30, 30, 30, .3);
 	}
+
+	.body-content :target::before {
+		/* When linking to tags with 'id's (example:
+		   'website.com/post/#heading'), make them
+		   appear lower down the page so that they
+		   don't appear under the sticky header set
+		   above.
+		   See: https://stackoverflow.com/a/24298427
+		   Note that this causes the cursor text
+		   selection of the target to behave
+		   undesirably.
+		*/
+		content: '';
+		display: block;
+		height: 3em;
+		margin-top: -3em;
+		visibility: hidden;
+		pointer-events: none;
+	}
 }
 
 
