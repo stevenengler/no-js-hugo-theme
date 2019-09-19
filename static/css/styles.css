@@ -234,6 +234,29 @@ blockquote {
 	font-weight: bold;
 }
 
+.section-list {
+	padding-left: 0;
+}
+
+.section-list li {
+	display: inline-block;
+	margin-right: 0.5em;
+}
+
+.section-list li:last-child {
+	margin-right: 0em;
+}
+
+.section-list li > * {
+	background-color: rgba(25, 25, 25, 0.05);
+	border-radius: 5px;
+	font-size: 90%;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+}
+
 .links {
 	font-size: 120%;
 	list-style-type: none;

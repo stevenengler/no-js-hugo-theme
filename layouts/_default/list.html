@@ -6,7 +6,7 @@
   </div>
   {{- if gt (len .Sections) 0 }}
   <h2>Categories</h2>
-    <ul>
+    <ul class="section-list">
     {{- range .Sections }}
       <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{- end }}

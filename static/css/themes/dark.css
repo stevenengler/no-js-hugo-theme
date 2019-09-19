@@ -17,6 +17,14 @@ a > code {
 	background-color: rgba(65, 65, 170, 0.3);
 }
 
+.section-list li > * {
+	background-color: rgba(90, 90, 90, 0.25);
+}
+
+.section-list li > a {
+	background-color: rgba(65, 65, 170, 0.3);
+}
+
 body {
 	color: rgb(210, 210, 210);
 	background-color: rgb(27, 27, 27);
