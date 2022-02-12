@@ -1,8 +1,8 @@
 {{ define "main" }}
   {{ .Content }}
-  {{ if gt ( len ( where .Pages "Section" "posts" )) 0 }}
+  {{ if gt ( len ( where .Site.RegularPages "Section" "posts" )) 0 }}
     <h2>Recent Posts</h2>
-    {{ range first 2 ( where .Pages "Section" "posts" ) }}
+    {{ range first 2 ( where .Site.RegularPages "Section" "posts" ) }}
       <article class="all-list">
         <div class="title-list">
           <h3><a href="{{ .RelPermalink }}">{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</a></h3>
