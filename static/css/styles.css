@@ -221,12 +221,12 @@ blockquote {
 }
 
 .table-of-contents li {
-	margin-top: 0.8em;
+	margin-top: 0.5em;
 }
 
 .table-of-contents ul ul {
 	list-style: none;
-	padding-left: 1.5em;
+	padding-left: 1.0em;
 }
 
 .table-of-contents-title {
@@ -336,8 +336,8 @@ blockquote {
 
 body {
 	font-size: 13pt;
-	font-family: Lato, Arial, Helvetica, sans-serif;
-	line-height: 1.4;
+	font-family: Lato, Arial, Helvetica, "Liberation Sans", sans-serif;
+	line-height: 1.45;
 	margin: 0;
 }
 
