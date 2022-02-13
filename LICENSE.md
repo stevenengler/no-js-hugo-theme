@@ -1,8 +1,9 @@
 All of the files in this repository are licensed under the MIT License, with the
 following exceptions:
 
-static/header-bg-light.jpg: Pixabay License
-static/header-bg-dark.jpg: Pixabay License
+static/header-bg-light.jpg: Pixabay License  
+static/header-bg-dark.jpg: Pixabay License  
+exampleSite/content/posts/second/cinque-terre-g21bc04293\_640.jpg: Pixabay License
 
 ----------------------
 

@@ -1,0 +1,24 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = "Notebook"
+theme = "no-js-hugo-theme"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    noClasses = false
+
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 6
+
+[params]
+  # enable javascript theme switcher
+  themeStyleSwitcher = true # default false
+  # theme style if the theme switcher is disabled
+  #themeStyle = "dark.css" # default "light.css"
+  # footer text at the bottom of every page
+  footerText = "Footer Text" # default <unset>
+  # enable the table of content on pages with more than this many words (negative to disable)
+  # (can be overridden per-page by setting the 'toc' front matter parameter)
+  #tocWordThreshold = 1000 # default <unset>
