@@ -1,9 +1,9 @@
 {{ $themeStyleDefault := "light.css" -}}
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ .Site.LanguageCode }}">
 <head>
-	<meta charset="utf-8"> 
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 	<link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
@@ -54,7 +54,7 @@
 {{- if .Site.Params.FooterText }}
 	<hr class="dont-show">
 	<div class="footer">
-		<p>{{ .Site.Params.FooterText }}</p>
+		<p>{{ .Site.Params.FooterText | markdownify }}</p>
 	</div>
 {{- end }}
 </body>
