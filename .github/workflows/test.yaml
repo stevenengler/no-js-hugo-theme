@@ -1,0 +1,29 @@
+name: Test example site
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+
+    - name: Install hugo
+      run: |
+        cd /tmp/
+        wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.122.0/hugo_0.122.0_linux-amd64.deb
+        sudo apt-get install -y ./hugo.deb
+
+    - name: Build
+      run: |
+        mkdir exampleSite/themes
+        ln -sT "$(pwd)" exampleSite/themes/no-js-hugo-theme
+        cd exampleSite && hugo
