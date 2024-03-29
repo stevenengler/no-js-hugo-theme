@@ -311,25 +311,25 @@ blockquote {
 }
 
 .header-right {
+	/* want the images to have padding to make them easier to click, but we still want them aligned correctly */
+	--label-padding: 0.3em;
+
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: calc(-1 * var(--label-padding));
+	right: calc(-1 * var(--label-padding));
 	display: flex;
 }
 
-.header-right * {
-	margin-left: 1em;
-}
-
-.header-right *:first-child {
-	margin-left: 0;
+.header-right > * {
+	margin-left: 0.4em;
 }
 
 .clickable-header-label {
 	cursor: pointer;
+	padding: var(--label-padding);
 }
 
-.clickable-header-label * {
+.clickable-header-label img {
 	height: 1em;
 	width: auto; /* to override the <img width="__"> attribute when css is supported */
 }
@@ -503,6 +503,7 @@ body {
 	}
 
 	.header-right {
+		top: 0;
 		height: 100%;
 		align-items: center;
 	}
