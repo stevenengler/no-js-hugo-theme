@@ -354,7 +354,7 @@ body {
 
 .header {
 	background-color: lightgray;
-	background-size: 100%;
+	background-size: cover;
 	background-position: bottom;
 	display: inline-block;
 	z-index: 1; /* this prevents images with css filters from appearing above the header when in portrait mode */
