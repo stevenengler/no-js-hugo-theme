@@ -14,6 +14,7 @@
 </head>
 <body>
 	<input class="show-hide-menu-input" style="display:none;" autocomplete="off" type="checkbox" id="toggle-1">
+	<label class="overlay" for="toggle-1"></label>
 	<div class="main">
 		<div class="header">
 			<div class="header-content">
@@ -31,7 +32,6 @@
 							<img class="color-adapting-image" width="30" src="{{ "images/hamburger.svg" | relURL }}" alt="menu button">
 						</label>
 					</div>
-					<label class="overlay" for="toggle-1"></label>
 {{- if .Site.Menus.main }}
 					<div class="dont-show">
 						<p>

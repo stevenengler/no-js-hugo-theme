@@ -526,7 +526,7 @@ body {
 		transition: all 0.3s;
 	}
 
-	.show-hide-menu-input:checked ~ .main .overlay {
+	.show-hide-menu-input:checked ~ .overlay {
 		visibility: visible;
 		opacity: 1;
 		transition: opacity 0.3s;
