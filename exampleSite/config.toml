@@ -18,7 +18,7 @@ theme = "no-js-hugo-theme"
   # theme style if the theme switcher is disabled
   #themeStyle = "dark.css" # default "light.css"
   # footer text at the bottom of every page
-  footerText = "Footer Text" # default <unset>
+  footerText = "[no-js-hugo-theme](https://github.com/stevenengler/no-js-hugo-theme)" # default <unset>
   # enable the table of content on pages with more than this many words (negative to disable)
   # (can be overridden per-page by setting the 'toc' front matter parameter)
   #tocWordThreshold = 1000 # default <unset>
