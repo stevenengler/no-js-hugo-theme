@@ -1,3 +1,7 @@
+:root {
+	--document-margin: 15pt;
+}
+
 h1 { font-size: 1.50em; }
 h2 { font-size: 1.40em; }
 h3 { font-size: 1.20em; }
@@ -362,7 +366,7 @@ body {
 }
 
 .header-content {
-	margin: 15pt;
+	margin: var(--document-margin);
 	position: relative; /* so that "position:absolute" works for the menu label */
 }
 
@@ -372,7 +376,7 @@ body {
 }
 
 .body-content {
-	margin: 15pt;
+	margin: var(--document-margin);
 	word-wrap: break-word;
 }
 
@@ -494,6 +498,10 @@ body {
 }
 
 @media only screen and (max-width: 400pt) {
+	:root {
+		--document-margin: 10pt;
+	}
+
 	.header-right {
 		height: 100%;
 		align-items: center;
@@ -556,20 +564,16 @@ body {
 		margin-top: 0px;
 	}
 
-	.header-content {
-		margin: 8pt 10pt;
-	}
-
-	.body-content {
-		margin: 10pt;
-	}
-
 	.title a {
 		vertical-align: -10%; /* we don't want the font descender space to be centered as well */
 	}
 }
 
 @media print {
+	:root {
+		--document-margin: 0pt;
+	}
+
 	body {
 		background-color: initial !important;
 	}
@@ -584,14 +588,6 @@ body {
 	.header {
 		background-color: initial !important;
 		background-image: none !important;
-	}
-
-	.header-content {
-		margin: 0;
-	}
-
-	.body-content {
-		margin: 0;
 	}
 
 	.header-right {
