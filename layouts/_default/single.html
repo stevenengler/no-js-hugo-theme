@@ -22,8 +22,8 @@
         </summary>
         {{ $toc := .TableOfContents -}}
         {{/* Workaround for an extra layer of indentation (https://discourse.gohugo.io/t/2303) */}}
-        {{- $toc := replaceRE `<nav(.*)>(\s?)<ul>\s?<li>\s?<ul>` `<nav${1}>${2}<ul>` $toc -}}
-        {{- $toc := replaceRE `</ul>\s?</li>\s?</ul>(\s?)</nav>` `</ul>${1}</nav>` $toc -}}
+        {{- $toc := replaceRE `<nav(.*)>(\s*)<ul>\s*<li>\s*<ul>` `<nav${1}>${2}<ul>` $toc -}}
+        {{- $toc := replaceRE `</ul>\s*</li>\s*</ul>(\s*)</nav>` `</ul>${1}</nav>` $toc -}}
         {{- safeHTML $toc }}
       </details>
     </div>
