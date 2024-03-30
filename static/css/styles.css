@@ -586,10 +586,6 @@ body {
 		padding-top: var(--entry-padding);
 		padding-bottom: var(--entry-padding);
 	}
-
-	.title a {
-		vertical-align: -10%; /* we don't want the font descender space to be centered as well */
-	}
 }
 
 @media print {
