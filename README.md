@@ -2,7 +2,7 @@
 
 A minimal, responsive, and privacy-friendly [Hugo](https://gohugo.io/) theme that does not require the client to enable JavaScript.
 
-Many Hugo themes (and websites in general) overuse JavaScript to the point where webpages don't render properly or even become unreadable when clients choose not to enable JavaScript. This theme is designed to work well if the client does not have JavaScript enabled. It is designed for both desktop and mobile browsers. All modern browsers (Chromium, Firefox, and Safari) are supported. The theme does not load any external third-party resources.
+Many Hugo themes (and websites in general) don't render properly or even become unreadable when clients choose not to enable JavaScript. This theme is designed to work well if the client does not have JavaScript enabled. It is designed for both desktop and mobile browsers. All modern browsers (Chromium, Firefox, and Safari) are supported. The theme does not load any external third-party resources.
 
 See the [example site](https://stevenengler.github.io/no-js-hugo-theme-example/).
 
