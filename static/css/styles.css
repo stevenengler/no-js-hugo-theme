@@ -338,6 +338,11 @@ blockquote {
 	display: none;
 }
 
+#show-hide-menu-label * {
+	/* duration for the rotation transition of the hamburger image */
+	transition-duration: 100ms;
+}
+
 body {
 	font-size: 13pt;
 	font-family: Lato, Arial, Helvetica, "Liberation Sans", sans-serif;
@@ -525,6 +530,10 @@ body {
 
 	.show-hide-menu-input:checked ~ .main .links {
 		display: inherit;
+	}
+
+	.show-hide-menu-input:checked ~ .main #show-hide-menu-label > img {
+		transform: rotate(90deg);
 	}
 
 	.show-hide-menu-input:checked ~ .overlay {
