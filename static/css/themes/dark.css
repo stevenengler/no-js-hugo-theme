@@ -46,6 +46,10 @@ figure.color-adapting-image img {
 	background-image: url(../../images/header-bg-dark.jpg);
 }
 
+.links, .links li {
+	border-color: #383838;
+}
+
 .main {
 	background-color: rgb(14, 14, 14);
 	box-shadow: none;
@@ -107,6 +111,6 @@ figure.color-adapting-image img {
 
 @media only screen and (max-width: 400pt) {
 	.links {
-		background-color: rgb(30, 30, 30);
+		background-color: rgb(23, 23, 23);
 	}
 }

@@ -39,6 +39,10 @@ blockquote {
 	background-image: url(../../images/header-bg-light.jpg);
 }
 
+.links, .links li {
+	border-color: rgb(211, 211, 211);
+}
+
 .main {
 	background-color: white;
 }

@@ -315,8 +315,8 @@ blockquote {
 	--label-padding: 0.3em;
 
 	position: absolute;
-	top: calc(-1 * var(--label-padding));
-	right: calc(-1 * var(--label-padding));
+	top: calc(var(--document-margin) - var(--label-padding));
+	right: calc(var(--document-margin) - var(--label-padding));
 	display: flex;
 }
 
@@ -360,14 +360,17 @@ body {
 	background-color: lightgray;
 	background-size: cover;
 	background-position: bottom;
-	display: inline-block;
-	z-index: 1; /* this prevents images with css filters from appearing above the header when in portrait mode */
 	width: 100%;
+	/* header must be above the overlay */
+	/* this also prevents images with css filters from appearing above the header when in portrait mode */
+	z-index: 3;
+	/* z-index doesn't apply to the default 'static' position */
+	position: relative;
 }
 
 .header-content {
-	margin: var(--document-margin);
-	position: relative; /* so that "position:absolute" works for the menu label */
+	padding: var(--document-margin);
+	position: relative; /* so that "position: absolute" works for the menu label */
 }
 
 .body {
@@ -521,48 +524,58 @@ body {
 	}
 
 	.show-hide-menu-input:checked ~ .main .links {
-		visibility: visible;
-		opacity: 1;
-		right: 0;
-		transition: all 0.3s;
+		display: inherit;
 	}
 
 	.show-hide-menu-input:checked ~ .overlay {
 		visibility: visible;
 		opacity: 1;
-		transition: opacity 0.3s;
+	}
+
+	/* prevent scrolling the main body; must be on html element and not body for iOS */
+	html:has(.show-hide-menu-input:checked) {
+		overflow: hidden;
+		height: 100%;
+		/* prevent scrolling (of everything) on iOS */
+		/* any element with 'overflow-y: scroll' will allow the body to scroll for some reason */
+		/* use 'pan-zoom' to allow users to zoom if they need to, even though it makes scrolling weird */
+		touch-action: pan-zoom;
 	}
 
 	.links {
-		display: block;
-		visibility: hidden;
-		opacity: 0;
-		overflow-y: scroll;
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		right: -100px; /* start to the right for the transition */
-		min-width: 75%;
-		z-index: 3;
+		/* vertical padding between list items */
+		--entry-padding: 9pt;
+
+		display: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+		padding-left: var(--document-margin);
+		padding-right: var(--document-margin);
+		padding-top: calc(var(--document-margin) - var(--entry-padding));
+		padding-bottom: calc(var(--document-margin) - var(--entry-padding));
+
+		font-size: 100%;
 		background-color: rgb(247, 247, 247);
-		padding: 10pt;
-		margin: 0;
+		border-top: solid 1px;
+		border-bottom: solid 1px;
 	}
 
 	.links li {
-		margin-right: 0;
-		border-bottom: solid 1px gray;
+		border-bottom: solid 1px;
+		/* override all previously set margins */
+		margin: 0;
+	}
+
+	.links li:last-child {
+		border-bottom: none;
 	}
 
 	.links li > * {
-		box-sizing: border-box;
+		/* make the links easily clickable */
 		width: 100%;
-		padding: 13px;
-	}
-
-	.links li:first-child {
-		border-top: solid 1px gray;
-		margin-top: 0px;
+		padding-top: var(--entry-padding);
+		padding-bottom: var(--entry-padding);
 	}
 
 	.title a {
