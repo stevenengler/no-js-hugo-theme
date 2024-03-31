@@ -14,13 +14,22 @@ theme = "no-js-hugo-theme"
 
 [params]
   # enable javascript theme switcher
-  themeStyleSwitcher = true # default false
+  # default: false
+  themeStyleSwitcher = true
+
   # theme style if the theme switcher is disabled
-  #themeStyle = "dark.css" # default "light.css"
-  # footer text at the bottom of every page
-  footerText = "[no-js-hugo-theme](https://github.com/stevenengler/no-js-hugo-theme)" # default <unset>
+  # default: "light.css"
+  #themeStyle = "dark.css"
+
+  # footer markdown text at the bottom of every page
+  # default: <unset>
+  footerText = "[no-js-hugo-theme](https://github.com/stevenengler/no-js-hugo-theme)"
+
   # enable the table of content on pages with more than this many words (negative to disable)
   # (can be overridden per-page by setting the 'toc' front matter parameter)
-  #tocWordThreshold = 1000 # default <unset>
+  # default: <unset>
+  #tocWordThreshold = 1000
+
   # adds an "onion-location" meta attribute to the HTML of each page
-  #onionLocation = "http://<your-onion-service-address>.onion" # default <unset>
+  # default <unset>
+  #onionLocation = "http://<your-onion-service-address>.onion"
