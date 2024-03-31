@@ -5,6 +5,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
+{{- if isset .Site.Params "onionlocation" }}
+	<meta http-equiv="onion-location" content="{{ urls.JoinPath .Site.Params.OnionLocation .RelPermalink }}">
+{{- end }}
 	<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 	<link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
 	<link id="theme_css" rel="stylesheet" href="{{ "css/themes" | relURL }}/{{ .Site.Params.ThemeStyle | default $themeStyleDefault }}">
