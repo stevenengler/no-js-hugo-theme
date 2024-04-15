@@ -31,5 +31,5 @@ theme = "no-js-hugo-theme"
   #tocWordThreshold = 1000
 
   # adds an "onion-location" meta attribute to the HTML of each page
-  # default <unset>
+  # default: <unset>
   #onionLocation = "http://<your-onion-service-address>.onion"
