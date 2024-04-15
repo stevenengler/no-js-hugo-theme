@@ -270,9 +270,10 @@ blockquote {
 	margin-top: 9pt;
 	display: flex;
 	flex-direction: row;
+	/* Not sure what we can do other than continue the links on the next line.
+	 * It's ugly, but probably better than hiding them altogether. */
 	flex-wrap: wrap;
-	overflow: hidden;
-	-webkit-overflow-scrolling: touch; /* this needs to go here for some reason */
+	row-gap: 0.3em;
 }
 
 .links li {
