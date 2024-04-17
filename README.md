@@ -8,6 +8,8 @@ See the [example site](https://stevenengler.github.io/no-js-hugo-theme-example/)
 
 ![Screenshot](/screenshot.png?raw=true)
 
+The theme works well with the Tor Browser at all security levels. Tor Browser [does not support](https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/42498) fallbacks for SVG images, so you may want to rasterize the theme's svg images as jpg/png/webp versions so that they display on the "safest" security level.
+
 Some features are not possible without JavaScript. These features can be enabled in the site config file and will never decrease the quality of the website.
 
 Additional JavaScript features:
