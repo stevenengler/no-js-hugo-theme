@@ -19,7 +19,7 @@
 	<input class="show-hide-menu-input" style="display:none;" autocomplete="off" type="checkbox" id="toggle-1">
 	<label class="overlay" for="toggle-1"></label>
 	<div class="main">
-		<div class="header">
+		<header class="header">
 			<div class="header-content">
 				<div class="title">
 					<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
@@ -31,7 +31,7 @@
 							<img class="color-adapting-image" width="30" src="" alt="change theme button">
 						</div>
 {{- end }}
-					    <label id="show-hide-menu-label" class="clickable-header-label" for="toggle-1">
+						<label id="show-hide-menu-label" class="clickable-header-label" for="toggle-1">
 							<img class="color-adapting-image" width="30" src="{{ "images/hamburger.svg" | relURL }}" alt="menu button">
 						</label>
 					</div>
@@ -49,18 +49,18 @@
 {{- end }}
 				</div>
 			</div>
-		</div>
-		<div class="body">
+		</header>
+		<main class="body">
 			<div class="body-content">
 				{{- block "main" . }}{{ end }}
 			</div>
-		</div>
+		</main>
 	</div>
 {{- if .Site.Params.FooterText }}
 	<hr class="dont-show">
-	<div class="footer">
+	<footer class="footer">
 		<p>{{ .Site.Params.FooterText | markdownify }}</p>
-	</div>
+	</footer>
 {{- end }}
 </body>
 </html>

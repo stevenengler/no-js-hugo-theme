@@ -41,12 +41,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .heading-anchor {
+	/* this is used on an "aside" tag so that it's not shown in the browser's reader mode */
+	display: inline;
 	color: grey;
 	margin-left: 0.5em;
 	font-size: 0.75em;
 }
 
-.heading-anchor:hover {
+.heading-anchor a:hover {
 	text-decoration: none;
 }
 

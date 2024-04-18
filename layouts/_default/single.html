@@ -1,6 +1,6 @@
 {{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
 {{ define "main" }}
-  <div class="title-header">
+  <header class="title-header">
     <h1>{{ if .Draft }}<i>(Draft)</i> {{ end }}{{ .Title }}</h1>
     <div class="title-header-date">
       {{- if eq .Date.IsZero false }}
@@ -10,24 +10,24 @@
         &mdash; last updated <time>{{ .Lastmod.Format "January 2, 2006" }}</time>
       {{- end }}
     </div>
-  </div>
-  {{ if or (.Params.toc) (and (ne .Params.toc false) (isset .Site.Params "tocwordthreshold") (ge .Site.Params.TocWordThreshold 0) (gt .WordCount .Site.Params.TocWordThreshold)) }}
-    {{/* If the front matter parameter is true, show the toc */}}
-    {{/* Elif the front matter parameter is false, don't show the toc */}}
-    {{/* Elif the front matter parameter is not set, show the toc if the site parameter is set, non-negative, and less than the word count */}}
-    <p></p>
-    <div class="table-of-contents">
-      <details open="open">
-        <summary>
-          <span class="table-of-contents-title">Table of Contents</span>
-        </summary>
-        {{ $toc := .TableOfContents -}}
-        {{/* Workaround for an extra layer of indentation (https://discourse.gohugo.io/t/2303) */}}
-        {{- $toc := replaceRE `<nav(.*)>(\s*)<ul>\s*<li>\s*<ul>` `<nav${1}>${2}<ul>` $toc -}}
-        {{- $toc := replaceRE `</ul>\s*</li>\s*</ul>(\s*)</nav>` `</ul>${1}</nav>` $toc -}}
-        {{- safeHTML $toc }}
-      </details>
-    </div>
-  {{ end }}
-  {{ .Content | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" (printf "${1}<a href=\"#${2}\" class=\"heading-anchor\" aria-label=\"Anchor\"><img src=\"%s\" class=\"color-adapting-image\" height=\"20\"></a>${3}" ("images/chain-link.svg" | relURL)) | safeHTML }}
+    {{ if or (.Params.toc) (and (ne .Params.toc false) (isset .Site.Params "tocwordthreshold") (ge .Site.Params.TocWordThreshold 0) (gt .WordCount .Site.Params.TocWordThreshold)) }}
+      {{/* If the front matter parameter is true, show the toc */}}
+      {{/* Elif the front matter parameter is false, don't show the toc */}}
+      {{/* Elif the front matter parameter is not set, show the toc if the site parameter is set, non-negative, and less than the word count */}}
+      <p></p>
+      <div class="table-of-contents">
+        <details open="open">
+          <summary>
+            <span class="table-of-contents-title">Table of Contents</span>
+          </summary>
+          {{ $toc := .TableOfContents -}}
+          {{/* Workaround for an extra layer of indentation (https://discourse.gohugo.io/t/2303) */}}
+          {{- $toc := replaceRE `<nav(.*)>(\s*)<ul>\s*<li>\s*<ul>` `<nav${1}>${2}<ul>` $toc -}}
+          {{- $toc := replaceRE `</ul>\s*</li>\s*</ul>(\s*)</nav>` `</ul>${1}</nav>` $toc -}}
+          {{- safeHTML $toc }}
+        </details>
+      </div>
+    {{ end }}
+  </header>
+  {{ .Content | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" (printf "${1}<aside class=\"heading-anchor\"><a href=\"#${2}\" aria-label=\"Anchor\"><img src=\"%s\" class=\"color-adapting-image\" height=\"20\"></a></aside>${3}" ("images/chain-link.svg" | relURL)) | safeHTML }}
 {{ end }}
