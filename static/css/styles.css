@@ -311,6 +311,8 @@ blockquote {
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.7);
 	z-index: 2;
+	/* for iOS: https://stackoverflow.com/a/11885330 */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .header-right {
